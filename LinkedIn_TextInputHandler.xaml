@@ -1,0 +1,322 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="LinkedIn_FormElementHandler" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="formElementArg" Type="InArgument(ui:UiElement)" />
+    <x:Property Name="browserTab" Type="InOutArgument(ui:UiElement)" />
+    <x:Property Name="CVText" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>LinkedIn_FormElementHandler_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.Security</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="LinkedIn_FormElementHandler" sap:VirtualizedContainerService.HintSize="914.8000000000001,3160" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="formTextChildren" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:FindChildren Children="[formTextChildren]" DisplayName="Get TextInput Divs" Filter="&lt;webctrl tag='DIV' class='artdeco-text-input--container ember-view' /&gt;" sap:VirtualizedContainerService.HintSize="640,118.4" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
+      <ui:FindChildren.Target>
+        <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[formElementArg]" Id="98a337a9-c607-4d5f-9233-299e5863a122">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:FindChildren.Target>
+    </ui:FindChildren>
+    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each currentUiElement" sap:VirtualizedContainerService.HintSize="640,3018.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[formTextChildren]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="ui:UiElement">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:UiElement" Name="currentUiElement" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="638.4,2896.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="textInputChildren" />
+              <Variable x:TypeArguments="ui:UiElement" Name="inputArea" />
+              <Variable x:TypeArguments="ui:UiElement" Name="labelArea" />
+              <Variable x:TypeArguments="x:String" Name="LLMPrompt" />
+              <Variable x:TypeArguments="njl:JObject" Name="LLMResponse" />
+              <Variable x:TypeArguments="x:String" Name="strResponse" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:FindChildren sap2010:Annotation.AnnotationText="text/numeric input contains two children elements, &#xA;[0] is label&#xA;[1] is input" Children="[textInputChildren]" DisplayName="Find Children" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="604.8,178.4" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_CHILDREN">
+              <ui:FindChildren.Target>
+                <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[currentUiElement]" Id="f3a568db-3bea-4aef-b627-316b927b83fc">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:FindChildren.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:FindChildren>
+            <Assign sap:VirtualizedContainerService.HintSize="604.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:UiElement">[labelArea]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:UiElement">[textInputChildren.ElementAt(0)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="604.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:UiElement">[inputArea]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:UiElement">[textInputChildren.ElementAt(1)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="604.8,2431.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[browserTab]" OpenMode="Never" ScopeGuid="27994dcd-f9df-4dd4-a79d-7c0afda1d3de" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="571.2,2271.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="inputAreaText" />
+                      <Variable x:TypeArguments="x:String" Name="labelAreaText" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="537.6,220" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" InUiElement="[inputArea]" Result="[inputAreaText]" Version="V4" />
+                    <If Condition="[inputAreaText = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="537.6,1989.6" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="536,1750.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleinnertext" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="502.4,220" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_4" InUiElement="[labelArea]" Result="[labelAreaText]" Version="V4" />
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="502.4,306.4" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="467.2,196" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap2010:Annotation.AnnotationText="DEBUG" sap:VirtualizedContainerService.HintSize="433.6,136" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[CVText]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">FARIS OSAMA SOFTWARE ENGINEER +20 112 311 1713 FARIS.OSAMA347@GMAIL.COM NEW CAIRO, EGYPT GITHUB.COM/LINZI-V7 LINKEDIN.COM/IN/FARIS-OSAMA CAREER OBJECTIVE Computer Science undergraduate specializing in Software Engineering with a strong interest in Web Development. Passionate about problem-solving, building responsive web applications, and continuously improving my skills. Seeking opportunities to contribute to real-world projects and enhance my experience in frontend and full-stack development. EDUCATION 2022 - PRESENT Ain Shams University Cairo, Egypt Faculty of Computer and Information Sciences Software Engineering Program • CGPA: 3.7 • Relevant Coursework: Data Structures, Algorithm Analysis &amp; Design, Object-Oriented Programming, Web Engineering, Structured Programming, Design Patterns, DBMS 2019 - 2022 El Rowad College Cairo, Egypt IGCSE Division • 8 O-Levels Including Computer Science and Information &amp; Communication Technology (ICT) • 2 AS-Levels Including Math and Physics. • Total Grade: 99% RELEVANT SKILLS • Programming Languages: C++, Java, Python, JavaScript • Web Development (Actively Learning): HTML, CSS, JavaScript • Databases: SQL (Oracle) • Tools &amp; Technologies: Git, Jira, draw.io, Microsoft Office • Soft Skills: Fast Learner, Efficient Problem Solver, Teamwork, Critical Thinking, Time Management PROJECTS • Icy Tower – Structured Programming Game (1st Year) o Technologies used: C++, SFML o Developed the collision detection system and main menu for the game. o Gained experience in teamwork and project planning during game development. • Food Management System – Object-Oriented Programming Project (2nd Year) o Technologies used: Javao Implemented a user management system for registration and authentication. o Contributed to order management and admin dashboard functionalities. • Pac-Man – Data Structures Project (2nd Year) o Technologies used: C++, SFML o Developed level maps using graph algorithms, improving pathfinding efficiency. Optimized leaderboard storage with BSTs, reducing retrieval time. o Designed and implemented collision detection using graph-based algorithms • Sound Packing – Algorithm Analysis Project (3 rd Year) o Technologies used: C++ o Designed and implemented an algorithm using dynamic programming to efficiently organize audio files into folders, optimizing storage. o Strengthened skills in algorithm design and complexity analysis. • Admin Dashboard – Frontend Development Project (Learning Project) o Technologies used: HTML, CSS o Designed and developed a visually appealing admin dashboard layout as part of The Odin Project curriculum. o Utilized CSS Grid for an efficient and flexible layout structure. o Enhanced UI design principles and gained hands-on experience in frontend styling. • The Odin Project – Full Stack Curriculum (In Progress) o Self-Paced Learning – https://www.theodinproject.com/ o Completed foundational modules in HTML, CSS, and basic JavaScript. o Currently 50% through the JavaScript module, with regular progress in concepts like DOM manipulation, event handling, asynchronous programming and dynamic UI behavior. o Built multiple hands-on projects including Admin Dashboard, Tic-Tac-Toe, Todo-List o All related projects are version-controlled and publicly available on GitHub. o Actively learning and applying new concepts through real-world web development challenges</InArgument>
+                                  </Assign.Value>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Assign>
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                          </ui:CommentOut>
+                          <Assign sap:VirtualizedContainerService.HintSize="502.4,113.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[LLMPrompt]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[String.Format("You are an AI assistant specialized in parsing CVs and answering job application questions based strictly on the provided CV text and the question. CV Text: {0} Application Question (from form label): {1} Your Task: Provide a direct answer to the application question based primarily on the information within the CV Text. Output Format Instructions (Follow CRITICALLY): Numerical Answers: If the question clearly implies a numerical answer (e.g., Years of experience?, Expected salary?, Notice period in weeks?, How many projects?), respond with ONLY THE NUMBER. No currency symbols, no units (e.g., years), no text, no explanations. Just the digits. Example: 5 or 65000. If inferring years of experience: Calculate based on dates. Include experience from job descriptions and personal projects mentioned in the CV. If duration is impossible to infer from the CV, output 0. If inferring years of experience and the skill is not mentioned in CV at all, respond with DATA_NOT_IN_CV. If the question is about expected salary(VIP, FOCUS ON THIS), respond with the minimum wage in Egypt unless CV specifies an expected/desired salary. Yes/No Answers: If the question implies a Yes/No answer (e.g., Are you willing to relocate?, Do you have experience with X?), respond with ONLY Yes or No. Base the answer on information explicitly stated or strongly implied in the CV. If not clear, err on the side of what is presented or choose the most reasonable inference. If impossible to determine, respond DATA_NOT_IN_CV. Textual Answers (e.g., for motivation letter snippets, descriptions): If the question clearly asks for a descriptive textual answer (e.g., Describe your relevant experience, Why are you interested in this role?, Provide a short motivation statement), then provide a concise textual answer derived directly from the CV content. Keep the answer brief and relevant to the question. If an Answer Cannot Be Determined from the CV: If the question cannot be answered using the provided CV text, respond with DATA_NOT_IN_CV. General Rules: NO MARKUP, NO EXTRA TEXT, BE LITERAL. Answer:", CVText, labelAreaText)]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LLM_API_Request - Invoke Workflow File (Modules\LLM_API_Request.xaml)" sap:VirtualizedContainerService.HintSize="502.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Modules\LLM_API_Request.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <OutArgument x:TypeArguments="njl:JObject" x:Key="parsedResponse">[LLMResponse]</OutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="strPrompt">[LLMPrompt]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                          <Assign sap:VirtualizedContainerService.HintSize="502.4,113.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[strResponse]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[LLMResponse("choices")(0)("message")("content").ToString()]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <If Condition="[strResponse = &quot;DATA_NOT_IN_CV&quot;]" sap:VirtualizedContainerService.HintSize="502.4,760.8" sap2010:WorkflowViewState.IdRef="If_3">
+                            <If.Then>
+                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,349.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,176" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Fatal" Message="[&quot;DATA_NOT_IN_CV ERROR&quot;]" />
+                                <Throw Exception="[New Exception(&quot;DATA_NOT_IN_CV ERROR&quot;)]" sap:VirtualizedContainerService.HintSize="382.4,113.6" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,281.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382.4,221.6" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InUiElement="[inputArea]" Text="[strResponse]" Version="V4" />
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="536,108" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:Continue sap:VirtualizedContainerService.HintSize="502.4,48" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="0, 0, 0, 0" Version="V1" />
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+  </Sequence>
+</Activity>
