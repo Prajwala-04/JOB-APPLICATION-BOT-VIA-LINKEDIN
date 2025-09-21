@@ -103,11 +103,4 @@ etc...
 
 Your resume and job preferences are used only for filling job applications.
 
- 
-
-* **GitHub** – [linzi-v7](https://github.com/linzi-v7)  
-* **LinkedIn** – [Faris Osama](https://www.linkedin.com/in/faris-osama-7a3496303/)  
-
----
-
-### 📌 Project Status: **Completed** 🚀 (Future improvements planned)
+)
