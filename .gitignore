@@ -1,0 +1,8 @@
+# UiPath RPA Development
+**/*.log
+**/.local/**
+**/.objects/**
+**/.settings/**
+**/.tmh/**
+/.storage/.runtime
+/.screenshots
