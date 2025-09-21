@@ -103,27 +103,7 @@ etc...
 
 Your resume and job preferences are used only for filling job applications.
 
-## 🚀 Future Plans
-
-* Support for cover letters.
-* UI for manual review before submission.
-* Multiple resume selection per role type.
-* Better handling of complex/obscure form elements.
-* Improved error handling and user communication.
-
----
-
-## 🎓 Academic Info
-
-This project was developed as part of the **Software Requirements Engineering** course in **Ain Shams University**.
-
-## 📄 License
-
-This project is licensed under the **MIT License**, meaning you are free to use, modify, and distribute it with attribution. Read the full terms [here](https://github.com/linzi-v7/LinkedIn-EasyApply-Automator/blob/main/LICENSE).  
-
-## Contact  
-
-Have feedback or want to collaborate? Feel free to connect:  
+ 
 
 * **GitHub** – [linzi-v7](https://github.com/linzi-v7)  
 * **LinkedIn** – [Faris Osama](https://www.linkedin.com/in/faris-osama-7a3496303/)  
